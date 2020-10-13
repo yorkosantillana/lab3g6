@@ -9,18 +9,18 @@ public class ContadorMainMin extends ViewModel {
 
     private MutableLiveData<Integer> contadorMin = new MutableLiveData<>();
 
-    private Thread thread = null;
+    private Thread thread2 = null;
 
-    public void iniciarContador(){
+    public void iniciarContador2(){
 
-        setThread(new Thread(new Runnable() {
+        setThread2(new Thread(new Runnable() {
             @Override
             public void run() {
 
 
-                for(int contadorLocalMin=25;contadorLocalMin==0;contadorLocalMin--){
+                for(int contadorLocalMin=24;contadorLocalMin>=0;contadorLocalMin--){
 
-                    Log.d("contadorApp",String.valueOf(contadorLocalMin));
+                    Log.d("contadorMainMin",String.valueOf(contadorLocalMin));
                     getContadorMin().postValue(contadorLocalMin);
                     try {
                         Thread.sleep(60000);
@@ -37,7 +37,7 @@ public class ContadorMainMin extends ViewModel {
             }
         }));
 
-        getThread().start();
+        getThread2().start();
 
 
 
@@ -52,11 +52,12 @@ public class ContadorMainMin extends ViewModel {
         this.contadorMin = contadorMin;
     }
 
-    public Thread getThread() {
-        return thread;
+
+    public Thread getThread2() {
+        return thread2;
     }
 
-    public void setThread(Thread thread) {
-        this.thread = thread;
+    public void setThread2(Thread thread2) {
+        this.thread2 = thread2;
     }
 }

@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import pe.edu.pucp.tel306.ViewModels.ContadorMainMin;
 import pe.edu.pucp.tel306.ViewModels.ContadorMainSeg;
-import pe.edu.pucp.tel306.ViewModels.ContadorPrincipal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,11 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
         ViewModelProvider viewModelProvider1 = new ViewModelProvider(this);
         ContadorMainSeg contadorViewModel1 = viewModelProvider1.get(ContadorMainSeg.class);
-        contadorViewModel1.iniciarContador();
+        contadorViewModel1.iniciarContador1();
+
 
         ViewModelProvider viewModelProvider2 = new ViewModelProvider(this);
         ContadorMainMin contadorViewModel2 = viewModelProvider2.get(ContadorMainMin.class);
-        contadorViewModel2.iniciarContador();
+        contadorViewModel2.iniciarContador2();
 
 
 

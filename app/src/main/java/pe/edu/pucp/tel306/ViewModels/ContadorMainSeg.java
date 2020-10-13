@@ -9,17 +9,17 @@ public class ContadorMainSeg extends ViewModel {
 
     private MutableLiveData<Integer> contadorSeg = new MutableLiveData<>();
 
-    private Thread thread = null;
+    private Thread thread1 = null;
 
-    public void iniciarContador(){
+    public void iniciarContador1(){
 
-        setThread(new Thread(new Runnable() {
+        setThread1(new Thread(new Runnable() {
             @Override
             public void run() {
 
-                for(int contadorLocalSeg=59;contadorLocalSeg==0;contadorLocalSeg--){
+                for(int contadorLocalSeg=59;contadorLocalSeg>=0;contadorLocalSeg--){
 
-                    Log.d("contadorApp",String.valueOf(contadorLocalSeg));
+                    Log.d("contadorMainSeg",String.valueOf(contadorLocalSeg));
                     getContadorSeg().postValue(contadorLocalSeg);
                     try {
                         Thread.sleep(1000);
@@ -35,7 +35,7 @@ public class ContadorMainSeg extends ViewModel {
             }
         }));
 
-        getThread().start();
+        getThread1().start();
 
 
 
@@ -50,11 +50,12 @@ public class ContadorMainSeg extends ViewModel {
         this.contadorSeg = contadorSeg;
     }
 
-    public Thread getThread() {
-        return thread;
+
+    public Thread getThread1() {
+        return thread1;
     }
 
-    public void setThread(Thread thread) {
-        this.thread = thread;
+    public void setThread1(Thread thread1) {
+        this.thread1 = thread1;
     }
 }
