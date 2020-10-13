@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import pe.edu.pucp.tel306.ViewModels.ContadorMainMin;
+import pe.edu.pucp.tel306.ViewModels.ContadorMainSeg;
 import pe.edu.pucp.tel306.ViewModels.ContadorPrincipal;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Para el contador principal
-        ViewModelProvider viewModelProvider = new ViewModelProvider(this);
-        ContadorPrincipal contadorViewModel = viewModelProvider.get(ContadorPrincipal.class);
+        //Para el contador principal Segundos
+        ViewModelProvider viewModelProvider1 = new ViewModelProvider(this);
+        ContadorMainSeg contadorViewModel1 = viewModelProvider1.get(ContadorMainSeg.class);
 
-        contadorViewModel.getContadorSeg().observe(this, new Observer<Integer>() {
+        contadorViewModel1.getContadorSeg().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
                 TextView textView = findViewById(R.id.contador3);
@@ -29,7 +31,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        contadorViewModel.getContadorMin().observe(this, new Observer<Integer>() {
+
+
+        //Para el contador principal Minutos
+        ViewModelProvider viewModelProvider2 = new ViewModelProvider(this);
+        ContadorMainMin contadorViewModel2 = viewModelProvider2.get(ContadorMainMin.class);
+
+        contadorViewModel2.getContadorMin().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
                 TextView textView = findViewById(R.id.contador2);
@@ -51,9 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void iniciarContador(View view){
 
-        ViewModelProvider viewModelProvider = new ViewModelProvider(this);
-        ContadorPrincipal contadorViewModel = viewModelProvider.get(ContadorPrincipal.class);
-        contadorViewModel.iniciarContador();
+        ViewModelProvider viewModelProvider1 = new ViewModelProvider(this);
+        ContadorMainSeg contadorViewModel1 = viewModelProvider1.get(ContadorMainSeg.class);
+        contadorViewModel1.iniciarContador();
+
+        ViewModelProvider viewModelProvider2 = new ViewModelProvider(this);
+        ContadorMainMin contadorViewModel2 = viewModelProvider2.get(ContadorMainMin.class);
+        contadorViewModel2.iniciarContador();
+
+
 
 
 

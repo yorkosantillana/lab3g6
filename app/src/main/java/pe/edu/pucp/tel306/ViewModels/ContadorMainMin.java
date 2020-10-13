@@ -5,10 +5,9 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ContadorPrincipal extends ViewModel {
+public class ContadorMainMin extends ViewModel {
 
     private MutableLiveData<Integer> contadorMin = new MutableLiveData<>();
-    private MutableLiveData<Integer> contadorSeg = new MutableLiveData<>();
 
     private Thread thread = null;
 
@@ -17,19 +16,6 @@ public class ContadorPrincipal extends ViewModel {
         setThread(new Thread(new Runnable() {
             @Override
             public void run() {
-
-                for(int contadorLocalSeg=59;contadorLocalSeg==0;contadorLocalSeg--){
-
-                    Log.d("contadorApp",String.valueOf(contadorLocalSeg));
-                    getContadorSeg().postValue(contadorLocalSeg);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                        break;
-                    }
-
-                }
 
 
                 for(int contadorLocalMin=25;contadorLocalMin==0;contadorLocalMin--){
@@ -66,14 +52,6 @@ public class ContadorPrincipal extends ViewModel {
         this.contadorMin = contadorMin;
     }
 
-    public MutableLiveData<Integer> getContadorSeg() {
-        return contadorSeg;
-    }
-
-    public void setContadorSeg(MutableLiveData<Integer> contadorSeg) {
-        this.contadorSeg = contadorSeg;
-    }
-
     public Thread getThread() {
         return thread;
     }
@@ -81,6 +59,4 @@ public class ContadorPrincipal extends ViewModel {
     public void setThread(Thread thread) {
         this.thread = thread;
     }
-
-
 }
