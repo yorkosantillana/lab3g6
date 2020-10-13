@@ -17,18 +17,23 @@ public class ContadorMainSeg extends ViewModel {
             @Override
             public void run() {
 
-                for(int contadorLocalSeg=59;contadorLocalSeg>=0;contadorLocalSeg--){
+                for(int i =0;i<25;i++){
+                    for(int contadorLocalSeg=59;contadorLocalSeg>=0;contadorLocalSeg--){
 
-                    Log.d("contadorMainSeg",String.valueOf(contadorLocalSeg));
-                    getContadorSeg().postValue(contadorLocalSeg);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                        break;
+                        Log.d("contadorMainSeg",String.valueOf(contadorLocalSeg));
+                        getContadorSeg().postValue(contadorLocalSeg);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            break;
+                        }
+
                     }
 
                 }
+
+
 
 
 
