@@ -23,6 +23,7 @@
         android:id="@+id/contador2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="25"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.327"
@@ -35,6 +36,7 @@
         android:id="@+id/contador3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="00"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
@@ -101,5 +103,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.674"
         app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="92dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674"
+        app:srcCompat="@android:drawable/ic_media_pause" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

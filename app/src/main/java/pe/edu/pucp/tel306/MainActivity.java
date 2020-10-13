@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import pe.edu.pucp.tel306.ViewModels.ContadorMainMin;
@@ -66,6 +68,21 @@ public class MainActivity extends AppCompatActivity {
         ViewModelProvider viewModelProvider2 = new ViewModelProvider(this);
         ContadorMainMin contadorViewModel2 = viewModelProvider2.get(ContadorMainMin.class);
         contadorViewModel2.iniciarContador2();
+
+        ImageButton botonPlay = findViewById(R.id.imageButton);
+        botonPlay.setVisibility(View.INVISIBLE);
+
+        ImageButton botonPausa = findViewById(R.id.imageButton4);
+        botonPausa.setVisibility(View.VISIBLE);
+
+
+
+    }
+
+
+    public void botonPausa(View view){
+
+
 
 
 
