@@ -11,14 +11,14 @@ public class ContadorMainSeg extends ViewModel {
 
     private Thread thread1 = null;
 
-    public void iniciarContador1(){
+    public void iniciarContador1(final int segundos){
 
         setThread1(new Thread(new Runnable() {
             @Override
             public void run() {
 
                 for(int i =0;i<25;i++){
-                    for(int contadorLocalSeg=59;contadorLocalSeg>=0;contadorLocalSeg--){
+                    for(int contadorLocalSeg=segundos;contadorLocalSeg>=0;contadorLocalSeg--){
 
                         Log.d("contadorMainSeg",String.valueOf(contadorLocalSeg));
                         getContadorSeg().postValue(contadorLocalSeg);

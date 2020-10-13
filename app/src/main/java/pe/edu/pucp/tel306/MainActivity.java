@@ -63,23 +63,24 @@ public class MainActivity extends AppCompatActivity {
     public void iniciarContador(View view){
 
         TextView nuevoMinutos = findViewById(R.id.contador4);
+        String minutosPausa = (String) nuevoMinutos.getText();
+        int minutosPausaInt = Integer.valueOf(minutosPausa);
         nuevoMinutos.setVisibility(View.INVISIBLE);
+
         TextView nuevoSegundos = findViewById(R.id.contador5);
+        String segPausa = (String) nuevoSegundos.getText();
+        int segPausaInt = Integer.valueOf(segPausa);
         nuevoSegundos.setVisibility(View.INVISIBLE);
 
-        TextView textMinutos = findViewById(R.id.contador2);
-        textMinutos.setVisibility(View.VISIBLE);
-        TextView textSegundos = findViewById(R.id.contador3);
-        textSegundos.setVisibility(View.VISIBLE);
 
         ViewModelProvider viewModelProvider1 = new ViewModelProvider(this);
         ContadorMainSeg contadorViewModel1 = viewModelProvider1.get(ContadorMainSeg.class);
-        contadorViewModel1.iniciarContador1();
+        contadorViewModel1.iniciarContador1(segPausaInt);
 
 
         ViewModelProvider viewModelProvider2 = new ViewModelProvider(this);
         ContadorMainMin contadorViewModel2 = viewModelProvider2.get(ContadorMainMin.class);
-        contadorViewModel2.iniciarContador2();
+        contadorViewModel2.iniciarContador2(minutosPausaInt);
 
         ImageButton botonPlay = findViewById(R.id.imageButton);
         botonPlay.setVisibility(View.INVISIBLE);
@@ -87,12 +88,17 @@ public class MainActivity extends AppCompatActivity {
         ImageButton botonPausa = findViewById(R.id.imageButton4);
         botonPausa.setVisibility(View.VISIBLE);
 
+        TextView textMinutos = findViewById(R.id.contador2);
+        textMinutos.setVisibility(View.VISIBLE);
+        TextView textSegundos = findViewById(R.id.contador3);
+        textSegundos.setVisibility(View.VISIBLE);
 
 
     }
 
 
     public void botonPausa(View view){
+
 
         ImageButton botonPausa = findViewById(R.id.imageButton4);
         botonPausa.setVisibility(View.INVISIBLE);
@@ -119,7 +125,46 @@ public class MainActivity extends AppCompatActivity {
         nuevoSegundos.setVisibility(View.VISIBLE);
 
 
+
     }
+
+    public void botonReset(View view){
+
+        TextView nuevoMinutos = findViewById(R.id.contador4);
+        nuevoMinutos.setVisibility(View.INVISIBLE);
+
+        TextView nuevoSegundos = findViewById(R.id.contador5);
+        nuevoSegundos.setVisibility(View.INVISIBLE);
+
+        int segPausaInt = 59;
+        int minutosPausaInt = 24;
+
+
+        ViewModelProvider viewModelProvider1 = new ViewModelProvider(this);
+        ContadorMainSeg contadorViewModel1 = viewModelProvider1.get(ContadorMainSeg.class);
+        contadorViewModel1.iniciarContador1(segPausaInt);
+
+
+        ViewModelProvider viewModelProvider2 = new ViewModelProvider(this);
+        ContadorMainMin contadorViewModel2 = viewModelProvider2.get(ContadorMainMin.class);
+        contadorViewModel2.iniciarContador2(minutosPausaInt);
+
+        ImageButton botonPlay = findViewById(R.id.imageButton);
+        botonPlay.setVisibility(View.INVISIBLE);
+
+        ImageButton botonPausa = findViewById(R.id.imageButton4);
+        botonPausa.setVisibility(View.VISIBLE);
+
+        TextView textMinutos = findViewById(R.id.contador2);
+        textMinutos.setVisibility(View.VISIBLE);
+        TextView textSegundos = findViewById(R.id.contador3);
+        textSegundos.setVisibility(View.VISIBLE);
+
+
+
+    }
+
+
 
 
     @Override

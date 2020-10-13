@@ -34,9 +34,12 @@ public class MainActivity_edit extends AppCompatActivity {
 
         if(editText_trabajo.getError()== null && editText_descanso.getError() == null && editText_ciclo.getError() == null){
             Intent intent = new Intent(MainActivity_edit.this,MainActivity.class);
-            intent.putExtra("trabajo",trabajo);
-            intent.putExtra("descanso", descanso);
-            intent.putExtra("ciclo",ciclo);
+            Integer trabajoInt = Integer.parseInt(trabajo);
+            Integer descansoInt = Integer.parseInt(descanso);
+            Integer cicloInt = Integer.parseInt(ciclo);
+            intent.putExtra("trabajo",trabajoInt);
+            intent.putExtra("descanso", descansoInt);
+            intent.putExtra("ciclo",cicloInt);
             startActivity(intent);
         }
 

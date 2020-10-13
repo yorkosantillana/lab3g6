@@ -11,14 +11,14 @@ public class ContadorMainMin extends ViewModel {
 
     private Thread thread2 = null;
 
-    public void iniciarContador2(){
+    public void iniciarContador2(final int minutos){
 
         setThread2(new Thread(new Runnable() {
             @Override
             public void run() {
 
 
-                for(int contadorLocalMin=24;contadorLocalMin>=0;contadorLocalMin--){
+                for(int contadorLocalMin=minutos;contadorLocalMin>=0;contadorLocalMin--){
 
                     Log.d("contadorMainMin",String.valueOf(contadorLocalMin));
                     getContadorMin().postValue(contadorLocalMin);
