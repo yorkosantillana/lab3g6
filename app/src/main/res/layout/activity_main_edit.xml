@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_edit">
+
+    <EditText
+        android:id="@+id/editTextNumber_trabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Tiempo de Trabajo"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumber_descanso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Tiempo de descanso"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber_trabajo"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber_trabajo"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber_trabajo" />
+
+    <EditText
+        android:id="@+id/editTextNumber_ciclo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Numero de ciclos"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber_descanso"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber_descanso"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber_descanso" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="obtenerParametros"
+        android:text="Aplicar"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber_ciclo"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber_ciclo"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber_ciclo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
