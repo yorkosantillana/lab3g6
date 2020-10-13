@@ -52,11 +52,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
         registerForContextMenu(findViewById(R.id.contador));
+        registerForContextMenu(findViewById(R.id.contador2));
+        registerForContextMenu(findViewById(R.id.contador3));
+        registerForContextMenu(findViewById(R.id.contador4));
+        registerForContextMenu(findViewById(R.id.contador5));
 
     }
 
 
     public void iniciarContador(View view){
+
+        TextView nuevoMinutos = findViewById(R.id.contador4);
+        nuevoMinutos.setVisibility(View.INVISIBLE);
+        TextView nuevoSegundos = findViewById(R.id.contador5);
+        nuevoSegundos.setVisibility(View.INVISIBLE);
+
+        TextView textMinutos = findViewById(R.id.contador2);
+        textMinutos.setVisibility(View.VISIBLE);
+        TextView textSegundos = findViewById(R.id.contador3);
+        textSegundos.setVisibility(View.VISIBLE);
 
         ViewModelProvider viewModelProvider1 = new ViewModelProvider(this);
         ContadorMainSeg contadorViewModel1 = viewModelProvider1.get(ContadorMainSeg.class);
