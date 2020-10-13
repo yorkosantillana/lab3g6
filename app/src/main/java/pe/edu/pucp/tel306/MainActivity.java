@@ -82,10 +82,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void botonPausa(View view){
 
+        ImageButton botonPausa = findViewById(R.id.imageButton4);
+        botonPausa.setVisibility(View.INVISIBLE);
+
+        ImageButton botonPlay = findViewById(R.id.imageButton);
+        botonPlay.setVisibility(View.VISIBLE);
 
 
 
 
+        TextView textMinutos = findViewById(R.id.contador2);
+        String minutoActual = (String) textMinutos.getText();
+        textMinutos.setVisibility(View.INVISIBLE);
+        TextView textSegundos = findViewById(R.id.contador3);
+        String segundoActual = (String) textSegundos.getText();
+        textSegundos.setVisibility(View.INVISIBLE);
+
+        TextView nuevoMinutos = findViewById(R.id.contador4);
+        nuevoMinutos.setText(minutoActual);
+        nuevoMinutos.setVisibility(View.VISIBLE);
+
+        TextView nuevoSegundos = findViewById(R.id.contador5);
+        nuevoSegundos.setText(segundoActual);
+        nuevoSegundos.setVisibility(View.VISIBLE);
+
+        
 
 
     }
