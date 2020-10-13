@@ -58,6 +58,20 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(findViewById(R.id.contador4));
         registerForContextMenu(findViewById(R.id.contador5));
 
+
+
+        Intent intent = getIntent();
+
+        int trabajo = intent.getIntExtra("trabajo",0);
+        int descanso = intent.getIntExtra("descanso",0);
+        int ciclo = intent.getIntExtra("ciclo",0);
+
+
+        //TextView minutosText = findViewById(R.id.contador4);
+        //minutosText.setText(String.valueOf(trabajo));
+
+
+
     }
 
 
