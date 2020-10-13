@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_time_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity_edit" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".MainActivity_info" android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity_edit"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
